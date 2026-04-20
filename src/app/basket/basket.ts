@@ -13,4 +13,18 @@ export class Basket {
 service = inject(ProductService)
 
 basketItems = this.service.basketItems
+
+totalPrice() {
+let total = 0
+
+const items = this.basketItems()
+
+for(let item of items) {
+total += item.price
+}
+
+return total
+}
+
+
 }

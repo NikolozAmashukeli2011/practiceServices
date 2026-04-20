@@ -1,3 +1,7 @@
+<div class="total-price-container">
+<span>Total Price: <b class="green-text">{{ totalPrice() }}$</b> </span>
+</div>
+
 <div class="basket-container">
 @for (item of basketItems(); track item.id) {
 <app-product-card [productData]="item"

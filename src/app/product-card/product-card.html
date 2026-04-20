@@ -36,7 +36,12 @@
 }
 
 
-<button class="btn btn-dark add-to-cart" (click)="addToBasket()">
+@if (!isCartMode()) {
+<button class="btn btn-dark add-to-cart" (click)="putInBasket()">
 Add to Basket <i class="bi bi-basket2-fill"></i></button>
+} @else {
+<button class="btn btn-danger add-to-cart" (click)="removeProductFromBasket()">
+Remove from Basket <i class="bi bi-x-circle-fill"></i></button>
+}
 </div>
 </div>

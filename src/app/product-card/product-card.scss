@@ -1,6 +1,12 @@
 .card {
 text-align: center;
 
+&:hover {
+transition: 0.2s ease-in-out;
+transform: scale(1.05);
+box-shadow: 0 0 15px rgba(209, 70, 70, 0.6),
+}
+
 .product-info {
 display: flex;
 text-align: center;
@@ -17,7 +23,5 @@ font-weight: 600;
 .x {
 color: rgb(190, 48, 48);
 }
-
-
 
 }

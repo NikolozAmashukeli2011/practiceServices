@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../services/product-service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { ProductCard } from "../product-card/product-card";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ProductCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

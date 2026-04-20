@@ -1,0 +1,42 @@
+<div class="card">
+<img [src]="productData().image" class="card-img-top" alt="Not Found">
+
+<div class="card-body">
+<h5 class="card-title">{{ productData().name }}</h5>
+
+<div class="product-info">
+<p class="card-text">Price: <span class="product-price">
+{{ productData().price }}$</span>
+</p>
+
+@if (productData().nuts) {
+<p>nuts: <i class="bi bi-check-circle-fill check"></i></p>
+} @else {
+<p>nuts: <i class="bi bi-x-circle-fill x"></i></p>
+}
+</div>
+
+
+@if (productData().spiciness) {
+<p class="card-text">Spiciness:{{ showSpiciness() }}</p>
+} @else {
+<p class="card-text">spiciness: <i class="bi bi-x-circle-fill x"></i></p>
+}
+
+
+
+@if (productData().vegeterian) {
+<p class="card-text">Vegetarian:
+<i class="bi bi-check-circle-fill check"></i>
+</p>
+} @else {
+<p class="card-text">Vegetarian:
+<i class="bi bi-x-circle-fill x"></i>
+</p>
+}
+
+
+<button class="btn btn-dark add-to-cart" (click)="addToBasket()">
+Add to Basket <i class="bi bi-basket2-fill"></i></button>
+</div>
+</div>

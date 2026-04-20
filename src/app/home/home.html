@@ -1,3 +1,6 @@
 <div class="cards">
-
+@for (product of products(); track product.id) {
+<app-product-card [productData]="product">
+</app-product-card>
+}
 </div>

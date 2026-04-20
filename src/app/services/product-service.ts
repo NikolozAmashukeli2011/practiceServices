@@ -21,6 +21,8 @@ private http = inject(HttpClient)
 
 getProducts(): Observable<Product[]> {
 return this.http.get<Product[]>("https://restaurant.stepprojects.ge/api/Products/GetAll")
+
+
 }
 
 }

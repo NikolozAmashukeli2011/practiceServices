@@ -1,0 +1,23 @@
+.card {
+text-align: center;
+
+.product-info {
+display: flex;
+text-align: center;
+justify-content: center;
+gap: 16px;
+}
+
+.check,
+.product-price {
+color: green;
+font-weight: 600;
+}
+
+.x {
+color: rgb(190, 48, 48);
+}
+
+
+
+}

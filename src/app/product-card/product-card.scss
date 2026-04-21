@@ -1,6 +1,8 @@
 .card {
 text-align: center;
 padding: 20px;
+background-color: #333333;
+color: white;
 
 &:hover {
 transition: 0.2s ease-in-out;
@@ -17,7 +19,7 @@ gap: 16px;
 
 .check,
 .product-price {
-color: green;
+color: rgb(25, 139, 25);
 font-weight: 600;
 }
 
@@ -28,7 +30,7 @@ background-color: white;
 }
 
 .x {
-color: rgb(190, 48, 48);
+color: rgb(206, 72, 72);
 }
 
 }

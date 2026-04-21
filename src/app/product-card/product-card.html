@@ -7,7 +7,7 @@
 <img [src]="productData().image" class="card-img-top" alt="Not Found">
 
 <div class="card-body">
-<h5 class="card-title">{{ productData().name }}</h5>
+<h5 class="card-title"><b>{{ productData().name }}</b></h5>
 
 <div class="product-info">
 <p class="card-text">Price: <span class="product-price">
@@ -42,7 +42,7 @@
 
 
 @if (!isCartMode()) {
-<button class="btn btn-dark add-to-cart" (click)="putInBasket()">
+<button class="btn btn-danger add-to-cart" (click)="putInBasket()">
 Add to Basket <i class="bi bi-basket2-fill"></i></button>
 } @else {
 <button class="btn btn-danger remove-from-cart" (click)="removeProductFromBasket()">

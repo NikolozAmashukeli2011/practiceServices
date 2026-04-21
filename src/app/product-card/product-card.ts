@@ -45,6 +45,12 @@ Swal.fire({
   background: '#1a1a1a',
   color: '#ffffff'
 });
-this.Basket.removeFromBasket(this.productData().id)
+
+this.Basket.removeFromBasket(this.productData().id).subscribe(() => {
+this.Basket.basketItems.update(allTheProducts => {
+return allTheProducts.filter(singleProduct => singleProduct.id !== this.productData().id)
+})
+})
 }
+
 }

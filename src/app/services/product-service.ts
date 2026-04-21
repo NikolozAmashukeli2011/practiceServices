@@ -43,6 +43,7 @@ return this.http.post<postBody>("https://restaurant.stepprojects.ge/api/Baskets/
 }
 
 removeFromBasket(id: number) {
-this.basketItems.update(items => items.filter(i => i.id !== id))
+return this.http.delete(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`)
 }
+
 }

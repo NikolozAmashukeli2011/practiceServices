@@ -13,6 +13,12 @@ export interface Product {
   "categoryId": number
 }
 
+export interface postBody {
+quantity: number,
+price: number,
+productId: number
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -25,8 +31,15 @@ return this.http.get<Product[]>("https://restaurant.stepprojects.ge/api/Products
 
 basketItems = signal<Product[]>([])
 
-addToBasket(product: Product) {
-this.basketItems.update(items => [...items, product])
+addToBasket(product: Product): Observable<postBody> {
+const postObject =  {
+ quantity: 1,
+ price: product.price,
+ productId: product.id
+}
+
+return this.http.post<postBody>("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", postObject)
+
 }
 
 removeFromBasket(id: number) {

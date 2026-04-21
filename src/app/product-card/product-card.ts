@@ -30,14 +30,16 @@ Swal.fire({
   background: '#1a1a1a',
   color: '#ffffff'
 })
-this.Basket.addToBasket(this.productData())
+
+this.Basket.basketItems.update(currentItems => [...currentItems, this.productData()])
+this.Basket.addToBasket(this.productData()).subscribe()
 }
 
 removeProductFromBasket() {
 Swal.fire({
   position: "top-end",
   icon: "warning",
-  title: `${this.productData().name} removed from loot`,
+  title: `${this.productData().name} removed from the basket!`,
   showConfirmButton: false,
   timer: 1500,
   background: '#1a1a1a',

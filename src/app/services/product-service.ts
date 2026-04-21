@@ -10,7 +10,8 @@ export interface Product {
   "image": string,
   "vegeterian":boolean,
   "spiciness": number,
-  "categoryId": number
+  "categoryId": number,
+  quantity?: number
 }
 
 export interface postBody {
@@ -39,11 +40,11 @@ const postObject =  {
 }
 
 return this.http.post<postBody>("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", postObject)
-
 }
 
 removeFromBasket(id: number) {
 return this.http.delete(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`)
+
 }
 
 }

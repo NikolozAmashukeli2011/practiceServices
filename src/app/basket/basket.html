@@ -4,8 +4,8 @@
 
 <div class="basket-container">
 @for (item of basketItems(); track item.id) {
-<app-product-card [productData]="item"
-[isCartMode]="true"></app-product-card>
+<app-product-card [productData]="item"[isCartMode]="true">
+</app-product-card>
 } @empty {
 <div class="card text-bg-danger mb-3 basket-empty">
 <h2>The basket is empty!</h2>
@@ -17,6 +17,5 @@
 <button class="btn btn-outline-light" routerLink="/">Go to home page.</button>
 </div>
 }
-
 
 </div>

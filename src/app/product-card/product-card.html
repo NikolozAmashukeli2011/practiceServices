@@ -1,4 +1,9 @@
 <div class="card">
+@if (isCartMode() && productData().quantity) {
+  <div class="badge rounded-pill text-bg-primary">
+    Quantity: {{ productData().quantity }}
+  </div>
+}
 <img [src]="productData().image" class="card-img-top" alt="Not Found">
 
 <div class="card-body">
@@ -6,7 +11,7 @@
 
 <div class="product-info">
 <p class="card-text">Price: <span class="product-price">
-{{ productData().price }}$</span>
+{{ productData().price * (productData().quantity || 1)}}$</span>
 </p>
 
 @if (productData().nuts) {
@@ -40,8 +45,9 @@
 <button class="btn btn-dark add-to-cart" (click)="putInBasket()">
 Add to Basket <i class="bi bi-basket2-fill"></i></button>
 } @else {
-<button class="btn btn-danger add-to-cart" (click)="removeProductFromBasket()">
+<button class="btn btn-danger remove-from-cart" (click)="removeProductFromBasket()">
 Remove from Basket <i class="bi bi-x-circle-fill"></i></button>
 }
+
 </div>
 </div>

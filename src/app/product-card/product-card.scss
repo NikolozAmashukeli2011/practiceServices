@@ -21,6 +21,12 @@ color: green;
 font-weight: 600;
 }
 
+.remove-from-cart:hover {
+transition: 0.2s ease-in-out;
+color: red;
+background-color: white;
+}
+
 .x {
 color: rgb(190, 48, 48);
 }

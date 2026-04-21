@@ -20,7 +20,7 @@ let total = 0
 const items = this.basketItems()
 
 for(let item of items) {
-total += item.price
+total += item.price * (item.quantity || 1)
 }
 
 return total

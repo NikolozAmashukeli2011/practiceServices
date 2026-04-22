@@ -3,11 +3,13 @@ text-align: center;
 padding: 20px;
 background-color: #333333;
 color: white;
+border: 1px solid white;
 
 &:hover {
-transition: 0.2s ease-in-out;
+transition: 0.15s ease-in-out;
 transform: scale(1.05);
-box-shadow: 0 0 15px rgba(209, 70, 70, 0.6),
+box-shadow: 5px 5px 25px rgba(209, 70, 70, 0.8);
+border: 1px solid red;
 }
 
 .product-info {

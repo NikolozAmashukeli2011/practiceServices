@@ -1,5 +1,8 @@
+
+<app-search-bar></app-search-bar>
+
 <div class="cards">
-@for (product of products(); track product.id) {
+@for (product of productsService.getFilteredMenu(); track product.id) {
 <app-product-card [productData]="product">
 </app-product-card>
 }

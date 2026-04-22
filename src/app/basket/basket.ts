@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { ProductCard } from "../product-card/product-card";
 import { ProductService } from '../services/product-service';
 import { RouterLink } from "@angular/router";
+import { SearchBar } from "../search-bar/search-bar";
 
 @Component({
   selector: 'app-basket',
-  imports: [ProductCard, RouterLink],
+  imports: [ProductCard, RouterLink, SearchBar],
   templateUrl: './basket.html',
   styleUrl: './basket.scss',
 })

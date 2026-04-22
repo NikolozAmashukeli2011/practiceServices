@@ -8,6 +8,7 @@ align-items: center;
 min-height: 50vh;
 }
 
+.couldnt-match,
 .basket-empty {
   grid-column: 1 / -1;
   text-align: center;
@@ -34,3 +35,5 @@ max-width: 150px;
 padding: 0.5rem;
 margin: 2rem 0  0 2rem;
 }
+
+

@@ -1,0 +1,15 @@
+
+input {
+  width: 90%;
+  justify-self: center;
+  box-sizing: border-box;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+transition: 0.2s ease-in-out;
+
+&:focus {
+box-shadow: 0 0 25px rgb(158, 45, 45);
+border: 2px solid rgb(148, 29, 29);
+}
+}

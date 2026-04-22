@@ -1,6 +1,6 @@
 <div class="card">
 @if (isCartMode() && productData().quantity) {
-  <div class="badge rounded-pill text-bg-primary">
+  <div class="badge rounded-pill text-bg-light">
     Quantity: {{ productData().quantity }}
   </div>
 }
@@ -11,7 +11,7 @@
 
 <div class="product-info">
 <p class="card-text">Price: <span class="product-price">
-{{ productData().price * (productData().quantity || 1)}}$</span>
+{{ productData().price}}$</span>
 </p>
 
 @if (productData().nuts) {

@@ -1,21 +1,34 @@
-<div class="total-price-container">
+<app-search-bar></app-search-bar>
+
+<div class="total-price-container rounded-pill">
 <span>Total Price: <b class="green-text">{{ totalPrice() }}$</b> </span>
 </div>
 
 <div class="basket-container">
-@for (item of basketItems(); track item.id) {
+@for (item of service.getFilteredProducts(); track item.id) {
 <app-product-card [productData]="item"[isCartMode]="true">
 </app-product-card>
 } @empty {
-<div class="card text-bg-danger mb-3 basket-empty">
-<h2>The basket is empty!</h2>
-
-<div class="card-body">
-<span>Navigate to the home page to add products in the basket!</span>
-</div>
-
-<button class="btn btn-outline-light" routerLink="/">Go to home page.</button>
-</div>
+  @if (service.basketItems().length > 0) {
+    <div class="card text-bg-light mb-3 couldnt-match">
+  <div class="card-body">
+    <h5 class="card-title">No items matched your search: {{ service.searchText()}}</h5>
+  </div>
+  </div>
+  } @else {
+    <div class="card text-bg-danger mb-3 basket-empty">
+      <h2>The basket is empty!</h2>
+      <div class="card-body">
+        <span>Navigate to the home page to add products in the basket!</span>
+      </div>
+      <button class="btn btn-outline-light" routerLink="/">Go to home page.</button>
+    </div>
+  }
 }
+
+
+
+
+
 
 </div>

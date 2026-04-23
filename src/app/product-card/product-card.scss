@@ -4,6 +4,8 @@ padding: 20px;
 background-color: #333333;
 color: white;
 border: 1px solid white;
+max-width: 300px;
+justify-self: center;
 
 &:hover {
 transition: 0.15s ease-in-out;
@@ -33,6 +35,17 @@ background-color: white;
 
 .x {
 color: rgb(206, 72, 72);
+}
+
+.spicy-container {
+display: flex;
+justify-content: center;
+gap: 2px;
+margin-bottom: 1rem;
+}
+
+.fire-icon {
+color: hsl(39, 100%, 50%) !important;
 }
 
 }

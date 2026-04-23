@@ -16,8 +16,8 @@ Basket = inject(ProductService)
 
 isCartMode = input<boolean>(false)
 
-showSpiciness() {
-return "🔥".repeat(this.productData().spiciness)
+get spicinessArray() {
+  return Array(this.productData().spiciness).fill(0);
 }
 
 putInBasket() {

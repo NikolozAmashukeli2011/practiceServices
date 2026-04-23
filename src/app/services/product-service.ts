@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 
 export interface Product {
@@ -29,9 +29,20 @@ private http = inject(HttpClient)
 allProducts = signal<Product[]>([])
 
 constructor() {
+const savedBasket = localStorage.getItem('basket')
+
+if(savedBasket) {
+this.basketItems.set(JSON.parse(savedBasket))
+}
+
+effect(() => {
+localStorage.setItem('basket', JSON.stringify(this.basketItems()))
+})
+
 this.getProducts().subscribe((data) => {
 this.allProducts.set(data)
 })
+
 }
 
 getFilteredMenu() {

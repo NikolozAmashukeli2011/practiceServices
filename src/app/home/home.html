@@ -5,5 +5,12 @@
 @for (product of productsService.getFilteredMenu(); track product.id) {
 <app-product-card [productData]="product">
 </app-product-card>
+}@empty {
+
+    <div class="card text-bg-light mb-3 couldnt-match">
+  <div class="card-body">
+    <h5 class="card-title">No items matched your search: {{ productsService.searchText()}}</h5>
+  </div>
+  </div>
+
 }
-</div>

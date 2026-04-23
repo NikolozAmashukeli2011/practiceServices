@@ -23,7 +23,12 @@
 
 
 @if (productData().spiciness) {
-<p class="card-text">Spiciness:{{ showSpiciness() }}</p>
+<div class="spicy-container">
+<span>Spiciness:</span>
+@for (item of spicinessArray; track $index) {
+<i class="bi bi-fire text-danger fire-icon"></i>
+}
+</div>
 } @else {
 <p class="card-text">spiciness: <i class="bi bi-x-circle-fill x"></i></p>
 }
